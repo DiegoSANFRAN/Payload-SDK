@@ -35,11 +35,11 @@ extern "C" {
 /* Exported constants --------------------------------------------------------*/
 // ATTENTION: User must goto https://developer.dji.com/user/apps/#all to create your own dji sdk application, get dji sdk application
 // information then fill in the application information here.
-#define USER_APP_NAME               "your_app_name"
-#define USER_APP_ID                 "your_app_id"
-#define USER_APP_KEY                "your_app_key"
-#define USER_APP_LICENSE            "your_app_license"
-#define USER_DEVELOPER_ACCOUNT      "your_developer_account"
+#define USER_APP_NAME               "IVAQ Finder"
+#define USER_APP_ID                 "157194"
+#define USER_APP_KEY                "277ef255ddab87874f7426fafeb0e2e"
+#define USER_APP_LICENSE            "Qae27A6m83ZVyewec1CYok/uBhET8GdDP/V5xkJME/C+gQYwa6abBnJd5ERn99Y+dhGuVKLCkRTqOuXeUk0Pn404fYdRkwClknuOnXLL3SzPvPgmd684W37TvA2W7HdLMTr0WaySlET/OyJQWlxMsyDPR304xIUswaroXj0G45sYWauZ8/kWxZWbDGS0YOAyJxmmeHpB1lmN/DSOS54nRVJ/xjNbpXwtntzD9kRfDotgMOobjs/+mbfN1NwP+jdvGjBFZJykOOAD6PZ3+pS+fR0OWt2sGSifWfKhy4EGHvrXjJCbiLpP0m0U1LFqvpOtG10eMymptDv4rm88PZsNUw=="
+#define USER_DEVELOPER_ACCOUNT      "diego.sanchez@ivaq.es"
 #define USER_BAUD_RATE              "460800"
 
 /* Exported types ------------------------------------------------------------*/
