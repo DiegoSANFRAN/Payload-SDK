@@ -1,0 +1,58 @@
+rsp@CUBE: ~/work/Payload-SDK/build/bin
+$ sudo ./dji_sdk_demo_on_rpi_cxx 
+   0.017	            core	[Info]	               dji_core.c:110  Payload SDK Version : V3.13.0-beta.0-build.2270 Aug 28 2025 16:36:46
+   0.920	         adapter	[Info]	     dji_access_adapter.c:393  Identify aircraft series is Matrice 350 Series
+   0.920	         adapter	[Info]	     dji_access_adapter.c:432  Identify mount position type is Extension Port Type
+   0.924	         adapter	[Info]	     dji_access_adapter.c:554  Identity uart0 baudrate is 230400 bps
+   3.009	         adapter	[Info]	  dji_payload_negotiate.c:297  Waiting payload negotiate finish.
+   5.811	            core	[Info]	    dji_identity_verify.c:646  Updating dji sdk policy file...
+   6.811	            core	[Info]	    dji_identity_verify.c:654  Update dji sdk policy file successfully
+   6.827	            core	[Info]	               dji_core.c:250  Identify AircraftType = Matrice 350 RTK, MountPosition = Extension Port, SdkAdapterType = None
+   6.894	       cloud_api	[Warn]	 dji_websocket_over_mop.c:135  The aircraft type do not support cloud_api function.Please read API or user documentation and replace aircraft then try again.
+   6.894	            core	[Info]	       dji_product_info.c:186  Set alias: PSDK_APPALIAS
+   6.894	             cam	[Error]	     dji_payload_camera.c:274  Can't support this function
+   6.894	            user	[Error]	test_payload_cam_emu_base.c:1266 init payload camera error:0x000000E0
+   6.894	            user	[Error]	          application.cpp:311  camera emu common init error
+   6.894	             cam	[Error]	     dji_payload_camera.c:988  lock mutex error: 0x000000E3.
+   6.894	            user	[Error]	test_payload_cam_emu_media.c:201  psdk camera media function init error.
+   6.894	            user	[Error]	          application.cpp:318  camera emu media init error
+   6.894	          gimbal	[Error]	             dji_gimbal.c:207  Can't support this function
+   6.894	            user	[Error]	test_payload_gimbal_emu.c:155  init gimbal module error: 0x000000E0
+   6.894	            user	[Error]	          application.cpp:325  psdk gimbal init error
+   7.394	            user	[Info]	            test_widget.c:107  widget file: /home/rsp/work/Payload-SDK/samples/sample_c/module_sample/widget/widget_file/en_big_screen
+   7.400	            user	[Info]	    test_widget_speaker.c:594  Set widget speaker volume: 60
+   7.400	            user	[Warn]	    test_widget_speaker.c:613  No audio device found, please add audio device and init speaker volume here!!!
+  11.902	            core	[Info]	               dji_core.c:340  Start dji sdk application
+  11.902	            user	[Info]	          application.cpp:372  Application start.
+
+| Available commands:                                                                              |
+| [0] Fc subscribe sample - subscribe quaternion and gps data                                      |
+| [1] Flight controller sample - you can control flying by PSDK                                    |
+| [2] Hms info manager sample - get health manger system info by language                          |
+| [a] Gimbal manager sample - you can control gimbal by PSDK                                       |
+| [c] Camera stream view sample - display the camera video stream                                  |
+| [d] Stereo vision view sample - display the stereo image                                         |
+| [e] Run camera manager sample - you can test camera's functions interactively                    |
+| [f] Start rtk positioning sample - you can receive rtk rtcm data when rtk signal is ok           |
+| [g] Request Lidar data sample - Request Lidar data and store the point cloud data as pcd files   |
+| [h] Request Radar data sample - Request radar data                                               |
+| [l] Run widget states manager sample, control widget states on other payload                     |
+
+c
+Please choose the stream demo you want to run
+
+--> [0] Normal RGB image display
+--> [1] Binary image display
+--> [2] Faces detection demo
+--> [3] Tensorflow Object detection demo
+
+0
+Please enter the type of camera stream you want to view
+
+--> [0] Fpv Camera
+--> [1] Main Camera
+--> [2] Vice Camera
+--> [3] Top Camera
+
+0
+Please enter the 'q' or 'Q' to quit camera stream view

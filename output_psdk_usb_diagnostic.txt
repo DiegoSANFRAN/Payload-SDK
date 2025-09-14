@@ -1,0 +1,79 @@
+rsp@CUBE: ~/Downloads
+$ ./psdk_usb_diagnostic.sh 
+===================================
+DJI PSDK USB DIAGNOSTIC
+===================================
+
+1. USB Gadget Status:
+UDC State: configured
+
+2. FunctionFS Endpoints Status:
+BULK1 endpoints:
+total 0
+dr-xr-xr-x 1 2000 2000   0 Sep 14 19:20 .
+drwxr-xr-x 5 root root 100 Sep 14 19:20 ..
+-rw-rw-rw- 1 2000 2000   0 Sep 14 19:20 ep0
+-rw-rw-rw- 1 2000 2000   0 Sep 14 19:20 ep1
+-rw-rw-rw- 1 2000 2000   0 Sep 14 19:20 ep2
+
+BULK2 endpoints:
+total 0
+dr-xr-xr-x 1 2000 2000   0 Sep 14 19:20 .
+drwxr-xr-x 5 root root 100 Sep 14 19:20 ..
+-rw-rw-rw- 1 2000 2000   0 Sep 14 19:20 ep0
+-rw-rw-rw- 1 2000 2000   0 Sep 14 19:20 ep1
+-rw-rw-rw- 1 2000 2000   0 Sep 14 19:20 ep2
+
+3. Recent USB errors (last 20 lines):
+[    4.240230] usb usb3: SerialNumber: fe980000.usb
+[    4.241474] hub 3-0:1.0: USB hub found
+[    6.293790] usbcore: registered new interface driver usbserial_generic
+[    6.308205] usbserial: USB Serial support registered for generic
+[    6.476259] usbcore: registered new interface driver ftdi_sio
+[    6.478465] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    6.486838] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[    6.496860] usb 1-1.2: Detected FT232R
+[    6.557423] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[    6.557897] ftdi_sio 1-1.4:1.0: FTDI USB Serial Device converter detected
+[    6.610502] usb 1-1.4: Detected FT232R
+[    6.772882] usb 1-1.4: FTDI USB Serial Device converter now attached to ttyUSB1
+[    8.063023] usbcore: registered new interface driver brcmfmac
+[   10.560944] usb0: HOST MAC 92:20:1a:95:82:45
+[   10.560957] usb0: MAC 02:68:5c:4d:26:86
+[   10.561065] dwc2 fe980000.usb: bound driver g_ether
+[   14.789847] dwc2 fe980000.usb: bound driver configfs-gadget.pi4
+[   14.963748] dwc2 fe980000.usb: new device is high-speed
+[   15.104084] dwc2 fe980000.usb: new device is high-speed
+[   15.193561] dwc2 fe980000.usb: new address 1
+
+4. Check for USB stalls/halts:
+[    5.756704] [vc_sm_connected_init]: installed successfully
+[   62.553106] v3d fec00000.v3d: MMU error from client L2T (0) at 0x1c81000, pte invalid
+
+5. FunctionFS processes using endpoints:
+startup_b  806                            root    3u      REG               0,33        0      15461 /dev/usb-ffs/bulk1/ep0
+startup_b  813                            root    3u      REG               0,34        0      13878 /dev/usb-ffs/bulk2/ep0
+dji_sdk_d 2164                            root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164                            root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2167 logger_ta             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2167 logger_ta             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2168 root_task             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2168 root_task             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2201 linker_ta             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2201 linker_ta             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2202 downloade             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2202 downloade             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2203 user_widg             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2203 user_widg             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2204 user_widg             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2204 user_widg             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2205 user_tran             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2205 user_tran             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2234 bulk_recv             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2234 bulk_recv             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2235 liveview_             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2235 liveview_             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+dji_sdk_d 2164 2236 dji_sdk_d             root    4u      REG               0,33        0      13879 /dev/usb-ffs/bulk1/ep1
+dji_sdk_d 2164 2236 dji_sdk_d             root    6u      REG               0,33        0      13880 /dev/usb-ffs/bulk1/ep2
+
+===================================
