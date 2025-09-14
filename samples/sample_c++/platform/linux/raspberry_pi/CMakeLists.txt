@@ -33,7 +33,17 @@ file(GLOB_RECURSE MODULE_SAMPLE_SRC
         ../../../module_sample/gimbal/*.c*
         ../../../module_sample/flight_controller/*.c*
         ../../../module_sample/hms_manager/*.c*
-        ../../../../sample_c/module_sample/*.c
+        ../../../../sample_c/module_sample/fc_subscription/*.c
+        ../../../../sample_c/module_sample/gimbal_emu/*.c
+        ../../../../sample_c/module_sample/camera_emu/*.c
+        ../../../../sample_c/module_sample/power_management/*.c
+        ../../../../sample_c/module_sample/positioning/*.c
+        ../../../../sample_c/module_sample/upgrade/*.c
+        ../../../../sample_c/module_sample/mop_channel/*.c
+        ../../../../sample_c/module_sample/payload_collaboration/*.c
+        ../../../../sample_c/module_sample/xport/*.c
+        ../../../../sample_c/module_sample/hms/*.c
+        ../../../../sample_c/module_sample/liveview/*.c
         ../../../module_sample/widget_manager/*.c*
         )
 file(GLOB_RECURSE MODULE_COMMON_SRC ../common/*.c*)

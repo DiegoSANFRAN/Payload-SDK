@@ -43,10 +43,7 @@
 #include <gimbal_emu/test_payload_gimbal_emu.h>
 #include <camera_emu/test_payload_cam_emu_media.h>
 #include <camera_emu/test_payload_cam_emu_base.h>
-#include "widget/test_widget.h"
-#include "widget/test_widget_speaker.h"
 #include <power_management/test_power_management.h>
-#include "data_transmission/test_data_transmission.h"
 
 /* Private constants ---------------------------------------------------------*/
 #define DJI_LOG_PATH                    "Logs/DJI"
