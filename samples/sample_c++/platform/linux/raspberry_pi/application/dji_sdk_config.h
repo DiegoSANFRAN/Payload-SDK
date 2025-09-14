@@ -44,9 +44,9 @@ extern "C" {
 * */
 #define CONFIG_HARDWARE_CONNECTION         DJI_USE_UART_AND_USB_BULK_DEVICE
 
-#define CONFIG_MODULE_SAMPLE_CAMERA_EMU_ON              true
+#define CONFIG_MODULE_SAMPLE_CAMERA_EMU_ON              false
 
-#define CONFIG_MODULE_SAMPLE_CAMERA_MEDIA_ON            true
+#define CONFIG_MODULE_SAMPLE_CAMERA_MEDIA_ON            false
 
 #define CONFIG_MODULE_SAMPLE_GIMBAL_EMU_ON              false
 
