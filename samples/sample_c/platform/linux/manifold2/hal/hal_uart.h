@@ -40,13 +40,14 @@
 #include "dji_platform.h"
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Exported constants --------------------------------------------------------*/
-//User can config dev based on there environmental conditions
-#define LINUX_UART_DEV1    "/dev/ttyUSB0"
-#define LINUX_UART_DEV2    "/dev/ttyACM0"
+// User can config dev based on there environmental conditions
+#define LINUX_UART_DEV1 "/dev/dji_serial"
+#define LINUX_UART_DEV2 "/dev/ttyACM0"
 
 /* Exported types ------------------------------------------------------------*/
 
