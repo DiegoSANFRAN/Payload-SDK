@@ -45,7 +45,7 @@ extern "C"
 
 /*!< Attention: Select the sample you want to run here.
  * */
-#define CONFIG_MODULE_SAMPLE_POWER_MANAGEMENT_ON
+/* #define CONFIG_MODULE_SAMPLE_POWER_MANAGEMENT_ON
 
 #define CONFIG_MODULE_SAMPLE_CAMERA_EMU_ON
 
@@ -59,14 +59,17 @@ extern "C"
 
 #define CONFIG_MODULE_SAMPLE_WIDGET_SPEAKER_ON
 
-#define CONFIG_MODULE_SAMPLE_DATA_TRANSMISSION_ON
+#define CONFIG_MODULE_SAMPLE_DATA_TRANSMISSION_ON */
 
-#define CONFIG_MODULE_SAMPLE_UPGRADE_ON
+/*!< Enable MSDK Mop channel interconnection sample (uses data channel to Mobile SDK). */
+#define CONFIG_MODULE_SAMPLE_MOP_CHANNEL_ON
 
-#define CONFIG_MODULE_SAMPLE_FC_SUBSCRIPTION_ON
+    /* #define CONFIG_MODULE_SAMPLE_UPGRADE_ON
 
-#define CONFIG_MODULE_SAMPLE_HMS_CUSTOMIZATION_ON
+    #define CONFIG_MODULE_SAMPLE_FC_SUBSCRIPTION_ON
 
+    #define CONFIG_MODULE_SAMPLE_HMS_CUSTOMIZATION_ON
+     */
     /*!< Attention: This function needs to be used together with mobile sdk mop sample.
      * */
     // #define CONFIG_MODULE_SAMPLE_MOP_CHANNEL_ON
