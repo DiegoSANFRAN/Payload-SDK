@@ -48,7 +48,7 @@ extern "C" {
 
 #define CONFIG_MODULE_SAMPLE_CAMERA_MEDIA_ON            true
 
-#define CONFIG_MODULE_SAMPLE_GIMBAL_EMU_ON              true
+/* #define CONFIG_MODULE_SAMPLE_GIMBAL_EMU_ON              true
 
 #define CONFIG_MODULE_SAMPLE_WIDGET_ON                  true
 
@@ -56,7 +56,7 @@ extern "C" {
 
 #define CONFIG_MODULE_SAMPLE_POWER_MANAGEMENT_ON        true
 
-#define CONFIG_MODULE_SAMPLE_DATA_TRANSMISSION_ON       true
+#define CONFIG_MODULE_SAMPLE_DATA_TRANSMISSION_ON       true */
 
 /* Exported types ------------------------------------------------------------*/
 
