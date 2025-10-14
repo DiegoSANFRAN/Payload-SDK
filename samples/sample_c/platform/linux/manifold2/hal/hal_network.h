@@ -41,22 +41,21 @@ extern "C"
  * NIC name micro define as #define 'LINUX_NETWORK_DEV   "your NIC name"'.
  */
 #define LINUX_NETWORK_DEV "pi4br0"
-
-    /**
-     * @attention
-     */
+/**
+ * @attention
+ */
 
 #define USB_NET_ADAPTER_VID (0x2CA3)
 #define USB_NET_ADAPTER_PID (0xF001)
 
 #define LINUX_CMD_STR_MAX_SIZE (128)
 
-    /* Exported types ------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
 
-    /* Exported functions --------------------------------------------------------*/
-    T_DjiReturnCode HalNetWork_Init(const char *ipAddr, const char *netMask, T_DjiNetworkHandle *halObj);
-    T_DjiReturnCode HalNetWork_DeInit(T_DjiNetworkHandle halObj);
-    T_DjiReturnCode HalNetWork_GetDeviceInfo(T_DjiHalNetworkDeviceInfo *deviceInfo);
+/* Exported functions --------------------------------------------------------*/
+T_DjiReturnCode HalNetWork_Init(const char *ipAddr, const char *netMask, T_DjiNetworkHandle *halObj);
+T_DjiReturnCode HalNetWork_DeInit(T_DjiNetworkHandle halObj);
+T_DjiReturnCode HalNetWork_GetDeviceInfo(T_DjiHalNetworkDeviceInfo *deviceInfo);
 
 #ifdef __cplusplus
 }
