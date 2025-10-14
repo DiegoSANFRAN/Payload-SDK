@@ -52,8 +52,8 @@ extern "C" {
 #define USB_NET_ADAPTER_VID                   (0x0B95)
 #define USB_NET_ADAPTER_PID                   (0x1790)
 #else
-#define USB_NET_ADAPTER_VID                   (0x0955)
-#define USB_NET_ADAPTER_PID                   (0x7020)
+#define USB_NET_ADAPTER_VID (0x2CA3)
+#define USB_NET_ADAPTER_PID (0xF001)
 #endif
 
 #define LINUX_CMD_STR_MAX_SIZE      (128)
