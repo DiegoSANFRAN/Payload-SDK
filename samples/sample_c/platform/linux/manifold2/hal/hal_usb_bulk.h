@@ -51,22 +51,22 @@ extern "C" {
 #endif
 
 /* Exported constants --------------------------------------------------------*/
-#define LINUX_USB_BULK1_EP_IN_FD                "/dev/usb-ffs/bulk1/ep1"
-#define LINUX_USB_BULK1_EP_OUT_FD               "/dev/usb-ffs/bulk1/ep2"
+#define LINUX_USB_BULK1_EP_OUT_FD                "/dev/usb-ffs/bulk1/ep1"
+#define LINUX_USB_BULK1_EP_IN_FD               "/dev/usb-ffs/bulk1/ep2"
 
 #define LINUX_USB_BULK1_INTERFACE_NUM           (2)
 #define LINUX_USB_BULK1_END_POINT_IN            (0x83)
 #define LINUX_USB_BULK1_END_POINT_OUT           (0x02)
 
-#define LINUX_USB_BULK2_EP_IN_FD                "/dev/usb-ffs/bulk2/ep1"
-#define LINUX_USB_BULK2_EP_OUT_FD               "/dev/usb-ffs/bulk2/ep2"
+#define LINUX_USB_BULK2_EP_OUT_FD                "/dev/usb-ffs/bulk2/ep1"
+#define LINUX_USB_BULK2_EP_IN_FD                 "/dev/usb-ffs/bulk2/ep2"
 
 #define LINUX_USB_BULK2_INTERFACE_NUM           (3)
 #define LINUX_USB_BULK2_END_POINT_IN            (0x84)
 #define LINUX_USB_BULK2_END_POINT_OUT           (0x03)
 
-#define LINUX_USB_BULK3_EP_IN_FD                "/dev/usb-ffs/bulk3/ep1"
-#define LINUX_USB_BULK3_EP_OUT_FD               "/dev/usb-ffs/bulk3/ep2"
+#define LINUX_USB_BULK3_EP_OUT_FD                "/dev/usb-ffs/bulk3/ep1"
+#define LINUX_USB_BULK3_EP_IN_FD                 "/dev/usb-ffs/bulk3/ep2"
 
 #define LINUX_USB_BULK3_INTERFACE_NUM           (4)
 #define LINUX_USB_BULK3_END_POINT_IN            (0x85)
