@@ -64,19 +64,19 @@ extern "C"
 /*!< Enable MSDK Mop channel interconnection sample (uses data channel to Mobile SDK). */
 #define CONFIG_MODULE_SAMPLE_MOP_CHANNEL_ON
 
-    /* #define CONFIG_MODULE_SAMPLE_UPGRADE_ON
+/* #define CONFIG_MODULE_SAMPLE_UPGRADE_ON
 
-    #define CONFIG_MODULE_SAMPLE_FC_SUBSCRIPTION_ON
+#define CONFIG_MODULE_SAMPLE_FC_SUBSCRIPTION_ON
 
-    #define CONFIG_MODULE_SAMPLE_HMS_CUSTOMIZATION_ON
-     */
-    /*!< Attention: This function needs to be used together with mobile sdk mop sample.
-     * */
-    // #define CONFIG_MODULE_SAMPLE_MOP_CHANNEL_ON
+#define CONFIG_MODULE_SAMPLE_HMS_CUSTOMIZATION_ON
+    */
+/*!< Attention: This function needs to be used together with mobile sdk mop sample.
+    * */
+// #define CONFIG_MODULE_SAMPLE_MOP_CHANNEL_ON
 
-    /* Exported types ------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
 
-    /* Exported functions --------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/
 
 #ifdef __cplusplus
 }

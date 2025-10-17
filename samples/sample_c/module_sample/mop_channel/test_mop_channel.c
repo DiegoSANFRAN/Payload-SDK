@@ -34,7 +34,7 @@
 
 /* Private constants ---------------------------------------------------------*/
 #define DJI_MOP_CHANNEL_TASK_STACK_SIZE 2048
-#define TEST_MOP_CHANNEL_INIT_TIMEMS (3 * 1000)
+#define TEST_MOP_CHANNEL_INIT_TIMEMS (10 * 1000)  // Increased from 3s to 10s to allow PSDK registration
 #define TEST_MOP_CHANNEL_RETRY_TIMEMS (3 * 1000)
 
 #define TEST_MOP_CHANNEL_NORMAL_TRANSFOR_CHANNEL_ID 49152
@@ -225,6 +225,8 @@ static void *DjiTest_MopChannelRecvNormalTask(void *arg)
 
     osalHandler->TaskSleepMs(TEST_MOP_CHANNEL_INIT_TIMEMS);
 
+    USER_LOG_INFO("[Normal-Channel] Starting MOP channel initialization...");
+
 #if TEST_MOP_CHANNEL_NORMAL_TRANSFOR_USING_RELIABLE_TRANS
     returnCode = DjiMopChannel_Create(&s_testMopChannelNormalHandle, DJI_MOP_CHANNEL_TRANS_RELIABLE);
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS)
@@ -232,6 +234,7 @@ static void *DjiTest_MopChannelRecvNormalTask(void *arg)
         USER_LOG_ERROR("mop channel create send handle error, stat:0x%08llX.", returnCode);
         return NULL;
     }
+    USER_LOG_INFO("[Normal-Channel] Created RELIABLE channel handle");
 #else
     returnCode = DjiMopChannel_Create(&s_testMopChannelNormalHandle, DJI_MOP_CHANNEL_TRANS_UNRELIABLE);
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS)
@@ -239,6 +242,7 @@ static void *DjiTest_MopChannelRecvNormalTask(void *arg)
         USER_LOG_ERROR("mop channel create send handle error, stat:0x%08llX.", returnCode);
         return NULL;
     }
+    USER_LOG_INFO("[Normal-Channel] Created UNRELIABLE channel handle");
 #endif
 
 REBIND:
@@ -249,6 +253,9 @@ REBIND:
         osalHandler->TaskSleepMs(TEST_MOP_CHANNEL_RETRY_TIMEMS);
         goto REBIND;
     }
+
+    USER_LOG_INFO("[Normal-Channel] Successfully bound to channel ID: %d", TEST_MOP_CHANNEL_NORMAL_TRANSFOR_CHANNEL_ID);
+    USER_LOG_INFO("[Normal-Channel] Waiting for MSDK connection...");
 
 REACCEPT:
     returnCode = DjiMopChannel_Accept(s_testMopChannelNormalHandle, &s_testMopChannelNormalOutHandle);
@@ -319,7 +326,7 @@ static void *DjiTest_MopChannelFileServiceAcceptTask(void *arg)
     USER_LOG_DEBUG("[File-Service] Waiting for normal data channel to be ready...");
 
     // Wait for normal data channel to establish first (channel 49152)
-    osalHandler->TaskSleepMs(3000); // Wait 3 seconds before starting file service
+    osalHandler->TaskSleepMs(TEST_MOP_CHANNEL_INIT_TIMEMS);
 
     USER_LOG_DEBUG("[File-Service] Start the file service.");
 
@@ -330,6 +337,8 @@ static void *DjiTest_MopChannelFileServiceAcceptTask(void *arg)
         return NULL;
     }
 
+    USER_LOG_INFO("[File-Service] Created RELIABLE channel handle");
+
 REBIND:
     returnCode = DjiMopChannel_Bind(s_fileServiceMopChannelHandle, TEST_MOP_CHANNEL_FILE_SERVICE_CHANNEL_ID);
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS)
@@ -338,6 +347,9 @@ REBIND:
         osalHandler->TaskSleepMs(TEST_MOP_CHANNEL_RETRY_TIMEMS);
         goto REBIND;
     }
+
+    USER_LOG_INFO("[File-Service] Successfully bound to channel ID: %d", TEST_MOP_CHANNEL_FILE_SERVICE_CHANNEL_ID);
+    USER_LOG_INFO("[File-Service] Waiting for MSDK connection...");
 
     while (1)
     {
