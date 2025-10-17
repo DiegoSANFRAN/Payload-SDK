@@ -34,8 +34,8 @@
 
 /* Private constants ---------------------------------------------------------*/
 #define DJI_MOP_CHANNEL_TASK_STACK_SIZE 2048
-#define TEST_MOP_CHANNEL_INIT_TIMEMS (10 * 1000)  // Increased from 3s to 10s to allow PSDK registration
-#define TEST_MOP_CHANNEL_RETRY_TIMEMS (3 * 1000)
+#define TEST_MOP_CHANNEL_INIT_TIMEMS (20 * 1000)  // Wait 20s to ensure PSDK registration completes (happens around 10-15s after boot)
+#define TEST_MOP_CHANNEL_RETRY_TIMEMS (5 * 1000)  // Increased retry interval to 5s
 
 #define TEST_MOP_CHANNEL_NORMAL_TRANSFOR_CHANNEL_ID 49152
 #define TEST_MOP_CHANNEL_NORMAL_TRANSFOR_USING_RELIABLE_TRANS 1
