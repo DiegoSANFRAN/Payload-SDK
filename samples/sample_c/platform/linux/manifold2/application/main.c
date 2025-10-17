@@ -491,17 +491,17 @@ static T_DjiReturnCode DjiUser_PrepareSystemEnvironment(void)
         printf("register hal network handler error");
         return DJI_ERROR_SYSTEM_MODULE_CODE_SYSTEM_ERROR;
     }
+#elif (CONFIG_HARDWARE_CONNECTION == DJI_USE_ONLY_UART)
+    /*!< Attention: Only use uart hardware connection.
+     */
+#endif
 
-    //Attention: if you want to use camera stream view function, please uncomment it.
+    //Attention: Socket handler needed for USB bulk and network modes
     returnCode = DjiPlatform_RegSocketHandler(&socketHandler);
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
         printf("register osal socket handler error");
         return DJI_ERROR_SYSTEM_MODULE_CODE_SYSTEM_ERROR;
     }
-#elif (CONFIG_HARDWARE_CONNECTION == DJI_USE_ONLY_UART)
-    /*!< Attention: Only use uart hardware connection.
-     */
-#endif
 
     returnCode = DjiPlatform_RegFileSystemHandler(&fileSystemHandler);
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {

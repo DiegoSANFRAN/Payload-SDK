@@ -261,7 +261,15 @@ REACCEPT:
     returnCode = DjiMopChannel_Accept(s_testMopChannelNormalHandle, &s_testMopChannelNormalOutHandle);
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS)
     {
-        USER_LOG_WARN("mop accept channel error :0x%08llX", returnCode);
+        USER_LOG_WARN("[Normal-Channel] mop accept channel error: 0x%08llX", returnCode);
+        if (returnCode == 0x000000E4) {
+            USER_LOG_ERROR("[Normal-Channel] ERROR: MOP link layer not ready! This usually means:");
+            USER_LOG_ERROR("  1. USB bulk connection to aircraft is not working");
+            USER_LOG_ERROR("  2. Aircraft is not responding to MOP heartbeats");
+            USER_LOG_ERROR("  3. Check: lsusb | grep DJI on Raspberry Pi");
+            USER_LOG_ERROR("  4. Verify aircraft is powered ON and fully booted");
+            USER_LOG_ERROR("  5. Check USB cable connection to E-Port");
+        }
         osalHandler->TaskSleepMs(TEST_MOP_CHANNEL_RETRY_TIMEMS);
         goto REACCEPT;
     }
@@ -358,7 +366,14 @@ REBIND:
                                           &s_fileServiceContent[currentClientNum].clientHandle);
         if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS)
         {
-            USER_LOG_WARN("[File-Service] mop accept channel error :0x%08llX", returnCode);
+            USER_LOG_WARN("[File-Service] mop accept channel error: 0x%08llX", returnCode);
+            if (returnCode == 0x000000E4) {
+                static bool errorPrinted = false;  // Only print detailed error once to avoid spam
+                if (!errorPrinted) {
+                    USER_LOG_ERROR("[File-Service] ERROR: MOP link layer not ready! (same root cause as Normal-Channel)");
+                    errorPrinted = true;
+                }
+            }
             osalHandler->TaskSleepMs(TEST_MOP_CHANNEL_RETRY_TIMEMS);
             goto REACCEPT;
         }
