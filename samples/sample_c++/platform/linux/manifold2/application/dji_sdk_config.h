@@ -55,9 +55,9 @@ extern "C"
 
 #define CONFIG_MODULE_SAMPLE_DATA_TRANSMISSION_ON
 
-    /* Exported types ------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
 
-    /* Exported functions --------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/
 
 #ifdef __cplusplus
 }

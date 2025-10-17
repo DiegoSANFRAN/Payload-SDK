@@ -40,7 +40,7 @@ extern "C" {
 #define USER_APP_KEY                "277ef255ddab87874f7426fafeb0e2e"
 #define USER_APP_LICENSE            "Qae27A6m83ZVyewec1CYok/uBhET8GdDP/V5xkJME/C+gQYwa6abBnJd5ERn99Y+dhGuVKLCkRTqOuXeUk0Pn404fYdRkwClknuOnXLL3SzPvPgmd684W37TvA2W7HdLMTr0WaySlET/OyJQWlxMsyDPR304xIUswaroXj0G45sYWauZ8/kWxZWbDGS0YOAyJxmmeHpB1lmN/DSOS54nRVJ/xjNbpXwtntzD9kRfDotgMOobjs/+mbfN1NwP+jdvGjBFZJykOOAD6PZ3+pS+fR0OWt2sGSifWfKhy4EGHvrXjJCbiLpP0m0U1LFqvpOtG10eMymptDv4rm88PZsNUw=="
 #define USER_DEVELOPER_ACCOUNT      "diego.sanchez@ivaq.es"
-#define USER_BAUD_RATE              "460800"
+#define USER_BAUD_RATE              "230400"
 /* Exported types ------------------------------------------------------------*/
 
 /* Exported functions --------------------------------------------------------*/
