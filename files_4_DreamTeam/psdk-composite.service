@@ -1,0 +1,13 @@
+[Unit]
+Description=DJI PSDK composite gadget (RNDIS + BULK)
+After=local-fs.target sys-kernel-config.mount
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/sbin/psdk-usb-composite-up.sh
+ExecStop=/usr/local/sbin/psdk-usb-composite-down.sh
+
+[Install]
+WantedBy=multi-user.target
